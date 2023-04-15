@@ -64,48 +64,48 @@ const WalletButton: React.FunctionComponent<IAppProps> = (props) => {
         }
     }, [account, chainId, setRendered, props.provider]);
 
-    useEffect(() => {
-        if (account && chainId !== 56) {
-            if (/Mobi|Android|iPhone/i.test(navigator.userAgent)) {
-                notification('Please switch to BSC network');
-                return
-            }
-            if (!switching) {
-                setSwitching(true);
-                switchNetwork(56).catch(async switchError => {
-                    console.log(switchError);
-                    if (switchError.code === 4902 || (switchError.data && switchError.data.originalError.code === 4902)) {
-                        if (!adding) {
-                            setAdding(true);
-                            const provider: any = await detectEthereumProvider()
-                            await provider.request({
-                                method: 'wallet_addEthereumChain',
-                                params: [
-                                    {
-                                        chainId: 56,
-                                        chainName: 'Binance Smart Chain',
-                                        rpcUrls: [process.env.REACT_APP_PROVIDER_MAINNET],
-                                    },
-                                ],
-                            }).then(() => {
-                                notification('Add BSC network successfully');
-                            })
-                                .catch((e: any) => {
-                                    console.log(e);
-                                    notification('Add BSC network error. Please try again');
-                                }).finally(() => {
-                                    setAdding(false);
-                                })
-                        }
-                    } else {
-                        notification('Please switch to BSC network');
-                    }
-                }).finally(() => {
-                    setSwitching(false);
-                });
-            }
-        }
-    }, [account, chainId, switchNetwork]);
+    // useEffect(() => {
+    //     if (account && chainId !== 56) {
+    //         if (/Mobi|Android|iPhone/i.test(navigator.userAgent)) {
+    //             notification('Please switch to BSC network');
+    //             return
+    //         }
+    //         if (!switching) {
+    //             setSwitching(true);
+    //             switchNetwork(56).catch(async switchError => {
+    //                 console.log(switchError);
+    //                 if (switchError.code === 4902 || (switchError.data && switchError.data.originalError.code === 4902)) {
+    //                     if (!adding) {
+    //                         setAdding(true);
+    //                         const provider: any = await detectEthereumProvider()
+    //                         await provider.request({
+    //                             method: 'wallet_addEthereumChain',
+    //                             params: [
+    //                                 {
+    //                                     chainId: 56,
+    //                                     chainName: 'Binance Smart Chain',
+    //                                     rpcUrls: [process.env.REACT_APP_PROVIDER_MAINNET],
+    //                                 },
+    //                             ],
+    //                         }).then(() => {
+    //                             notification('Add BSC network successfully');
+    //                         })
+    //                             .catch((e: any) => {
+    //                                 console.log(e);
+    //                                 notification('Add BSC network error. Please try again');
+    //                             }).finally(() => {
+    //                                 setAdding(false);
+    //                             })
+    //                     }
+    //                 } else {
+    //                     notification('Please switch to BSC network');
+    //                 }
+    //             }).finally(() => {
+    //                 setSwitching(false);
+    //             });
+    //         }
+    //     }
+    // }, [account, chainId, switchNetwork]);
 
 
     const activateProvider = async () => {

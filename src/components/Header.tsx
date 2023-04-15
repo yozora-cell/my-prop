@@ -1,8 +1,9 @@
 import { LanguageIcon, Bars3Icon } from '@heroicons/react/24/outline';
 import { ethers } from 'ethers';
 import { useImperativeHandle, useRef, useState } from 'react';
-import { NavLink } from 'react-router-dom';
 import WalletButton from './WalletButton';
+import InfoModal from './InfoModal';
+
 
 export interface IAppProps {
     clearData: () => void;
@@ -16,6 +17,7 @@ export default function Header(props: IAppProps) {
 
     const [active, setActive] = useState(0);
     const [show, setShow] = useState(false);
+    const [showModal, setShowModal] = useState(false);
 
     useImperativeHandle(props.onRef, () => {
         return {
@@ -29,6 +31,10 @@ export default function Header(props: IAppProps) {
 
     const handleMenu = () => {
         setShow(!show);
+    }
+
+    const changeInfoModal = () => {
+        setShowModal(!showModal);
     }
 
     const handleConnect = () => {
@@ -54,7 +60,7 @@ export default function Header(props: IAppProps) {
                         <section className='w-full flex flex-col justify-center items-center space-y-4'>
                             <span className='font-bold'>FAQ</span>
                             <LanguageIcon className="w-6 h-6" />
-                            <button className='w-full  bg-zuzalu order-0 border-2 flex justify-center items-center outline-none px-2 lg:px-6 py-2 font-poppins font-bold text-sm lg:text-lg rounded-xl leading-[24px] hover:bg-gray-50 transition-all'>
+                            <button onClick={changeInfoModal} className='w-full  bg-zuzalu order-0 border-2 flex justify-center items-center outline-none px-2 lg:px-6 py-2 font-poppins font-bold text-sm lg:text-lg rounded-xl leading-[24px] hover:bg-gray-50 transition-all'>
                                 Create a round
                             </button>
                             <WalletButton onRef={wallet} clearData={clearData} provider={props.provider} />
@@ -76,12 +82,14 @@ export default function Header(props: IAppProps) {
                     <span className='font-bold'>FAQ</span>
                     <span>|</span>
                     <LanguageIcon className="w-12 h-full object-contain" />
-                    <button className='w-full min-w-[5.125rem] lg:min-w-button bg-zuzalu order-0 border-2 flex justify-center items-center outline-none py-2 font-poppins font-bold text-sm lg:text-lg rounded-xl leading-[24px] hover:bg-gray-50 transition-all'>
+                    <button onClick={changeInfoModal} className='w-full min-w-[5.125rem] lg:min-w-button bg-zuzalu order-0 border-2 flex justify-center items-center outline-none py-2 font-poppins font-bold text-sm lg:text-lg rounded-xl leading-[24px] hover:bg-gray-50 transition-all'>
                         Create a round
                     </button>
                     <WalletButton onRef={wallet} clearData={clearData} provider={props.provider} />
                 </div>
             </section>
+
+            <InfoModal showModal={showModal} changeInfoModal={changeInfoModal}></InfoModal>
         </>
 
     );

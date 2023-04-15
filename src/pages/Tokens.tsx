@@ -7,32 +7,13 @@ import { card, spring } from "../asserts";
 import Ens from "../components/Ens";
 import { notification } from "../components/Notiofication";
 import Textarea from "../components/Textarea";
-import { CONTRACT_ADDRESS } from "../constants/config";
-import abi from "../contract/memo.json"
-import loopssAbi from "../contract/Loopss.json"
-import { handleAddToken } from "../utils/web3utils";
-import { Contract } from '@ethersproject/contracts'
-
-
-
 interface IAppProps {
-    provider: ethers.providers.Web3Provider
 }
-
-const memoInterface = new utils.Interface(abi)
-const memoContractAddress = '0x8040444c64009710E3a1b8F3B432aeb9f0d26a8F'
-const contract = new Contract(memoContractAddress, memoInterface)
-
-const loopssInterface = new utils.Interface(loopssAbi)
-const loopssContractAddress = '0xB1aC1c0f2E7E467f10Df232E82CC65e2CA4Cb0d2'
-const loopssContract = new Contract(loopssContractAddress, loopssInterface)
 
 
 export default function Tokens(props: IAppProps) {
 
     const { account } = useEthers();
-
-    const stakingBalance = useTokenBalance(CONTRACT_ADDRESS, account)
 
     const addressRef = useRef<HTMLInputElement>(null);
 
@@ -40,68 +21,9 @@ export default function Tokens(props: IAppProps) {
 
     const textareaRef = useRef<any>(null);
 
-    const { send } = useContractFunction(contract, 'sendMemo', { transactionName: 'Send Memo' })
-
-    const { state, send: approve } = useContractFunction(loopssContract, 'approve', { transactionName: 'approve' })
-
-    const useCheckAllowance = () => {
-        // 检查是否授权了max自己的Loopss给EventFactory
-        const { value, error } = useCall({
-            contract: new Contract(loopssContractAddress, loopssInterface),
-            method: 'allowance',
-            args: [account, account, memoContractAddress]
-        }) ?? {}
-        if (error) {
-            console.error(error.message)
-            return 0
-        }
-        return value?.[0]
-    }
-
-    const allowance = useCheckAllowance();
-
     useEffect(() => {
-        console.log(state)
-    }, [state])
+    }, [])
 
-
-    const sendToken = async () => {
-
-        const receiver = addressRef.current?.value;
-        const amount = amountRef.current!.value;
-        const memo = textareaRef.current.pushText();
-
-        const amountInWei = utils.parseEther(amount);
-        if (receiver && amountInWei && memo) {
-            if (allowance !== undefined && allowance._hex === '0x00') {
-                const tx = await approve(account, memoContractAddress, ethers.constants.MaxUint256)
-                    .catch((err) => {
-                        console.log(err)
-                        notification("Approve Failed!");
-                    })
-                if (tx) {
-                    notification("Approve successfully", "top-center", 1)
-                    const tx = await send(receiver, amountInWei, memo).catch((error: any) => {
-                        console.log(error);
-                        notification("Send failed")
-                    })
-                    if (tx) {
-                        notification("Send successfully", "top-center", 1)
-                    }
-                } else {
-                    notification("Approve Failed!");
-                }
-            } else {
-                const tx = await send(receiver, amountInWei, memo).catch((error: any) => {
-                    console.log(error);
-                    notification("Send failed")
-                })
-                if (tx) {
-                    notification("Send successfully", "top-center", 1)
-                }
-            }
-        }
-    }
 
 
     return (
@@ -134,7 +56,7 @@ export default function Tokens(props: IAppProps) {
                             <div className="text-xs md:text-sm flex items-center">
                                 {account ? (
                                     <>
-                                        <Ens address={account} shortenAddress={false} provider={props.provider} />
+                                        {/* <Ens address={account} shortenAddress={false} provider={props.provider} /> */}
                                         <DocumentDuplicateIcon className="ml-2 md:w-4 md:h-4 w-8 h-8 object-contain cursor-pointer" onClick={
                                             () => {
                                                 copy(account)
@@ -147,11 +69,11 @@ export default function Tokens(props: IAppProps) {
                         </div>
                         <div className="flex flex-col mt-2">
                             <span className="text-xs font-bold">Amount</span>
-                            <span className="text-sm">{stakingBalance ? (+ethers.utils.formatUnits(stakingBalance.toString())).toFixed(3).toString() : 0}</span>
+                            {/* <span className="text-sm">{stakingBalance ? (+ethers.utils.formatUnits(stakingBalance.toString())).toFixed(3).toString() : 0}</span> */}
                         </div>
                     </div>
                 </div>
-                <button className="absolute px-4 py-1 text-sm right-1/10 bottom-4 border-1 border-solid border-black rounded-md" onClick={() => handleAddToken(account)}>Add Loopss To Wallet</button>
+                {/* <button className="absolute px-4 py-1 text-sm right-1/10 bottom-4 border-1 border-solid border-black rounded-md" onClick={() => handleAddToken(account)}>Add Loopss To Wallet</button> */}
             </section>
 
             <section className="w-full relative rounded-lg border-1 border-solid border-black mt-4 flex-col space-y-4">
@@ -188,7 +110,7 @@ export default function Tokens(props: IAppProps) {
                             ref={amountRef}
                         />
                         <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
-                            {stakingBalance ? (+ethers.utils.formatUnits(stakingBalance.toString())).toFixed(3).toString() : 0}
+                            {/* {stakingBalance ? (+ethers.utils.formatUnits(stakingBalance.toString())).toFixed(3).toString() : 0} */}
                         </div>
                     </section>
 
@@ -203,7 +125,7 @@ export default function Tokens(props: IAppProps) {
                             className="w-full inline-flex justify-center rounded-md border border-solid border-black shadow-sm px-[10%] py-2 text-base font-medium text-baseColor focus:outline-none focus:ring-2 focus:ring-offset-2 sm:ml-3 sm:w-auto sm:text-sm"
                             onClick={async () => {
                                 if (account) {
-                                    await sendToken()
+                                    // await sendToken()
                                 } else {
                                     notification("Please connect your wallet first")
                                 }
