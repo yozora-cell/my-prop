@@ -54,7 +54,7 @@ export default function InfoModal(props: IAppProps) {
                         leaveFrom="opacity-100 translate-y-0 sm:scale-100"
                         leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
                     >
-                        <div className="relative inline-block align-bottom bg-black border-solid border-2 border-info-modal rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6">
+                        <div className="relative inline-block align-bottom bg-[#19473F] rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6">
                             <div className="sm:flex sm:items-center">
                                 <div className="flex-1 mt-3 text-center sm:mt-0 sm:ml-4">
                                     <Dialog.Title as="h3" className="text-lg leading-6 font-medium text-gray-300">
