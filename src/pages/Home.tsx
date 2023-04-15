@@ -182,21 +182,17 @@ export default function Home(props: IAppProps) {
                     </div>
                     {/* </NavLink> */}
                 </div>
-                <div>
+                <div className="max-w-[10rem] md:max-w-fit">
                     <div className="relative mt-2 flex items-center">
                         <input
                             type="text"
                             name="search"
                             id="search"
+                            placeholder="Search rounds"
                             className="block w-full bg-gray-200 rounded-lg border-0 py-1.5 pr-14 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                         />
-                        <div className="absolute inset-y-0 left-0 flex py-1.5 ml-2 items-center">
+                        <div className="absolute inset-y-0 right-0 flex py-1.5 pr-1.5 items-center">
                             <MagnifyingGlassIcon className="w-4 h-4 object-contain"></MagnifyingGlassIcon>
-                        </div>
-                        <div className="absolute inset-y-0 right-0 flex py-1.5 pr-1.5">
-                            <kbd className="inline-flex items-center rounded border border-gray-200 px-1 font-sans text-xs text-gray-400">
-                                ⌘K
-                            </kbd>
                         </div>
                     </div>
                 </div>
@@ -204,7 +200,7 @@ export default function Home(props: IAppProps) {
 
             {
                 active === 3 ? (
-                    <section className="w-full grid grid-cols-2 place-content-center gap-4 mt-4">
+                    <section className="w-full grid grid-cols-1 md:grid-cols-2 place-content-center gap-4 mt-4">
                         <Link to='/events'>
                             <div className="flex flex-col p-2 space-y-4 border border-solid rounded-lg" >
                                 <div className="flex justify-between items-center">
@@ -221,7 +217,7 @@ export default function Home(props: IAppProps) {
                                 </div>
                                 <div className="flex justify-between items-center">
                                     <div className="flex flex-col justify-start">
-                                        <span>Funding</span>
+                                        <span className="text-baseColor">Funding</span>
                                         <div className="flex items-center space-x-2">
                                             <span>0.40 ETH</span>
                                             <span>x</span>
@@ -229,11 +225,11 @@ export default function Home(props: IAppProps) {
                                         </div>
                                     </div>
                                     <div className="flex flex-col justify-start">
-                                        <span>Round ended</span>
+                                        <span className="text-baseColor">Round ended</span>
                                         <span>4 days ago</span>
                                     </div>
                                     <div className="flex flex-col justify-start">
-                                        <span>Proposals</span>
+                                        <span className="text-baseColor">Proposals</span>
                                         <span>39</span>
                                     </div>
                                 </div>
@@ -253,7 +249,7 @@ export default function Home(props: IAppProps) {
                                 </div>
                                 <div className="flex justify-between items-center">
                                     <div className="flex flex-col justify-start">
-                                        <span>Funding</span>
+                                        <span className="text-baseColor">Funding</span>
                                         <div className="flex items-center space-x-2">
                                             <span>1 ETH</span>
                                             <span>x</span>
@@ -261,17 +257,16 @@ export default function Home(props: IAppProps) {
                                         </div>
                                     </div>
                                     <div className="flex flex-col justify-start">
-                                        <span>Round ended</span>
+                                        <span className="text-baseColor">Round ended</span>
                                         <span>4 mos ago</span>
                                     </div>
                                     <div className="flex flex-col justify-start">
-                                        <span>Proposals</span>
+                                        <span className="text-baseColor">Proposals</span>
                                         <span>28</span>
                                     </div>
                                 </div>
                             </div>
                         </Link>
-
 
                         <Link to='/events'>
                             <div className="flex flex-col p-2 space-y-4 border border-solid rounded-lg" >
@@ -286,7 +281,7 @@ export default function Home(props: IAppProps) {
                                 </div>
                                 <div className="flex justify-between items-center">
                                     <div className="flex flex-col justify-start">
-                                        <span>Funding</span>
+                                        <span className="text-baseColor">Funding</span>
                                         <div className="flex items-center space-x-2">
                                             <span>2 ETH</span>
                                             <span>x</span>
@@ -294,17 +289,16 @@ export default function Home(props: IAppProps) {
                                         </div>
                                     </div>
                                     <div className="flex flex-col justify-start">
-                                        <span>Round ended</span>
+                                        <span className="text-baseColor">Round ended</span>
                                         <span>6 days ago</span>
                                     </div>
                                     <div className="flex flex-col justify-start">
-                                        <span>Proposals</span>
+                                        <span className="text-baseColor">Proposals</span>
                                         <span>35</span>
                                     </div>
                                 </div>
                             </div>
                         </Link>
-
 
                     </section>
                 ) :
@@ -314,17 +308,6 @@ export default function Home(props: IAppProps) {
                         </div>
                     )
             }
-
-            <section className="sticky bottom-8">
-                <div className="flex justify-center items-center p-2 text-2xl font-bold space-x-4">
-                    <img onClick={() => {
-                        window.open('https://discord.gg/9bt7uqGuJS', '_blank')
-                    }} src={discord} alt="" className="w-8 h-8 object-contain cursor-pointer" />
-                    <img onClick={() => {
-                        window.open('https://www.notion.so/socialmoney/Loopss-15a3634708754d729b345f386d80dc9d', '_blank')
-                    }} src={notion} alt="" className="w-8 h-8 object-contain cursor-pointer" />
-                </div>
-            </section>
         </div>
     );
 }

@@ -161,7 +161,7 @@ const WalletButton: React.FunctionComponent<IAppProps> = (props) => {
                     handleDisconnect();
                 }
             }}
-            className='min-w-[5.125rem] lg:min-w-button bg-zuzalu order-0 border-2 flex justify-center items-center outline-none px-2 lg:px-6 py-2 font-poppins font-bold text-sm lg:text-lg rounded-xl leading-[24px] hover:bg-gray-50 transition-all'
+            className='w-full min-w-[5.125rem] lg:min-w-button bg-zuzalu order-0 border-2 flex justify-center items-center outline-none py-2 font-poppins font-bold text-sm lg:text-lg rounded-xl leading-[24px] hover:bg-gray-50 transition-all'
         >
             {rendered === "" && "Connect"}
             {rendered !== "" && rendered}

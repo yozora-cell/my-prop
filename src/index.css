@@ -4,7 +4,7 @@
 
 @font-face {
   font-family: 'PtRoot';
-  src: url('./asserts/fonts/PT_Root_UI_Regular.otf');
+  src: url('./asserts/fonts/PT Root UI_Medium.otf');
 }
 
 body {
@@ -89,4 +89,37 @@ select:focus {
   display: -webkit-box;
   -webkit-line-clamp: 3; /* 限制最多显示3行文字 */
   -webkit-box-orient: vertical; /* 设置为垂直方向 */
+}
+
+.process-box {
+  height: 0.5rem;
+  border-radius: 48px;
+  border-bottom: 1px solid rgba(23, 96, 133, 1);
+}
+
+/* .process-box::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0.1;
+  background: rgba(114, 142, 173, 1);
+} */
+
+.process-0 {
+  position: absolute;
+  height: 100%;
+  opacity: 1;
+  border-radius: 48px;
+  background: rgba(134, 239, 172, 1);
+  z-index: 1;
+}
+
+.process-1 {
+  position: absolute;
+  height: 100%;
+  opacity: 1;
+  border-radius: 48px;
+  background: rgba(209, 213, 219, 1);
+  z-index: 0;
 }

@@ -146,7 +146,7 @@ export default function Events(props: IAppProps) {
 
     return (
         <div>
-            <section className="w-full flex flex-col justify-start relative rounded-lg mt-4">
+            <section className="w-full flex flex-col space-y-4 justify-start relative rounded-lg mt-4">
                 <div>
                     <span className="group block flex-shrink-0">
                         <div className="flex items-center">
@@ -167,18 +167,18 @@ export default function Events(props: IAppProps) {
                 <div className="text-pink-500">
                     <span>Mar 28, 2023 - Apr 4, 2023</span>
                 </div>
-                <p>Hack Week Content Creation Challenge</p>
+                <p className="text-2xl font-bold">Hack Week Content Creation Challenge</p>
                 <p className="break-words">As part of Nouns Hack Week, The Noun Square is hosting a 1-week Content Creation Challenge. We are seeking any kind of engaging Nounish content ideas: Short animations, YouTube or TikTok videos, Thoughtful Twitter threads, interesting Medium articles, etc... Any kind of Nounish content can be submitted for consideration. TNS Core Team and Nouncillors will vote together for the winners. Happy Hacking!</p>
             </section>
 
-            <section className="w-full flex flex-1 justify-end items-center mt-2 space-x-10">
+            <section className="w-full flex flex-1 justify-start md:justify-end items-center mt-4 space-x-4 md:space-x-10 text-xs md:text-lg">
                 <div className="flex flex-col justify-start">
                     <span className="text-purple-500">Round ended</span>
                     <span>4 days ago</span>
                 </div>
                 <div className="flex flex-col justify-start">
                     <span>Funding</span>
-                    <div className="flex items-center space-x-2">
+                    <div className="flex items-center md:space-x-2">
                         <span>0.40 ETH</span>
                         <span>x</span>
                         <span>5</span>
@@ -194,11 +194,16 @@ export default function Events(props: IAppProps) {
                 </div>
             </section>
 
-            <section className="w-full flex justify-center items-center mt-4 bg-gray-400">
-                <div className="w-[75%] flex flex-col space-y-4">
-
+            <section className="w-full  justify-center mt-4 hidden md:flex">
+                <div className="w-[75%] flex flex-col p-4 space-y-4">
+                    <CardSection title="✨ Hack Week: The Noun Square Animated shorts!" description="For hack week I've created some animated shorts for The Nouns Square!" image="https://zuzalu.city/49.png" address="alsara2k.eth" endedTime="16 days ago" current="15%" atLeast="25%" />
+                    <CardSection title="✨ 💰 5 Ways Nounish subDAOs Can Make Money" description="5 revenue generation projects for the nounish subDAOs, helping everyone to have sustainable DAOs." image="https://zuzalu.city/49.png" address="guiriba.eth" endedTime="12 days ago" current="25%" atLeast="50%" />
+                    <CardSection title="✨ Nouns Buddies : Proliferate Nouns Through Fun and Silly Content" description="Create a reels with relatable content while proliferating nouns" image="https://zuzalu.city/49.png" address="guiriba.eth" endedTime="12 days ago" current="20%" atLeast="25%" />
+                    <CardSection title="✨ Noggles Adventure Onboarding Minigames" description="An interactive Nounish minigame launched with Infinitykeys.io explaining Nouns,cco,the Noggles, and the overall Nouns m" image="https://zuzalu.city/49.png" address="guiriba.eth" endedTime="13 days ago" current="45%" atLeast="55%" />
+                    <CardSection title="✨ tns x fomo x index card x hack week last minute sprint" description="An ode to fomo, tns, and the index card in the subway." image="https://zuzalu.city/49.png" address="guiriba.eth" endedTime="13 days ago" current="50%" atLeast="60%" />
+                    <CardSection title="✨ PHEN WRITES ABOUT TNS" description="Write (3) distinct articles about The Nouns Square and Nounish culture." image="https://zuzalu.city/49.png" address="guiriba.eth" endedTime="12 days ago" current="55%" atLeast="85%" />
                 </div>
-                <div className="w-[25%]">
+                <div className="w-[25%] p-4">
                     <div className="p-4 rounded-lg border border-solid border-gray-300">
                         <div className="flex space-x-4">
                             <div className="rounded-full border border-solid border-gray-300 w-11 h-11 flex justify-center items-center">
@@ -206,54 +211,129 @@ export default function Events(props: IAppProps) {
                             </div>
                             <div className="flex flex-col justify-start">
                                 <span>Voting ended</span>
-                                <span>21 votes cast for 39 props!</span>
+                                <span className="text-baseColor">21 votes cast for 39 props!</span>
                             </div>
                         </div>
                         <div className="mt-2">
-                            <span>Winners are highlighted in green.</span>
+                            <span className="text-baseColor">Winners are highlighted in green.</span>
                         </div>
                     </div>
                 </div>
             </section>
 
+            <section className="w-full justify-center mt-4 flex flex-col md:hidden space-y-4">
+                <div className="p-4 rounded-lg border border-solid border-gray-300">
+                    <div className="flex space-x-4">
+                        <div className="rounded-full border border-solid border-gray-300 w-11 h-11 flex justify-center items-center">
+                            <svg className="w-6 h-6" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0V0z"></path><path d="M18 13h-.68l-2 2h1.91L19 17H5l1.78-2h2.05l-2-2H6l-3 3v4c0 1.1.89 2 1.99 2H19a2 2 0 002-2v-4l-3-3zm-1-5.05l-4.95 4.95-3.54-3.54 4.95-4.95L17 7.95zm-4.24-5.66L6.39 8.66a.996.996 0 000 1.41l4.95 4.95c.39.39 1.02.39 1.41 0l6.36-6.36a.996.996 0 000-1.41L14.16 2.3a.975.975 0 00-1.4-.01z"></path></svg>
+                        </div>
+                        <div className="flex flex-col justify-start">
+                            <span>Voting ended</span>
+                            <span className="text-baseColor">21 votes cast for 39 props!</span>
+                        </div>
+                    </div>
+                    <div className="mt-2">
+                        <span className="text-baseColor">Winners are highlighted in green.</span>
+                    </div>
+                </div>
+                <CardSection title="✨ Hack Week: The Noun Square Animated shorts!" description="For hack week I've created some animated shorts for The Nouns Square!" image="https://zuzalu.city/49.png" address="alsara2k.eth" endedTime="16 days ago" current="15%" atLeast="25%" />
+                <CardSection title="✨ 💰 5 Ways Nounish subDAOs Can Make Money" description="5 revenue generation projects for the nounish subDAOs, helping everyone to have sustainable DAOs." image="https://zuzalu.city/49.png" address="guiriba.eth" endedTime="12 days ago" current="25%" atLeast="50%" />
+                <CardSection title="✨ Nouns Buddies : Proliferate Nouns Through Fun and Silly Content" description="Create a reels with relatable content while proliferating nouns" image="https://zuzalu.city/49.png" address="guiriba.eth" endedTime="12 days ago" current="20%" atLeast="25%" />
+                <CardSection title="✨ Noggles Adventure Onboarding Minigames" description="An interactive Nounish minigame launched with Infinitykeys.io explaining Nouns,cco,the Noggles, and the overall Nouns m" image="https://zuzalu.city/49.png" address="guiriba.eth" endedTime="13 days ago" current="45%" atLeast="55%" />
+                <CardSection title="✨ tns x fomo x index card x hack week last minute sprint" description="An ode to fomo, tns, and the index card in the subway." image="https://zuzalu.city/49.png" address="guiriba.eth" endedTime="13 days ago" current="50%" atLeast="60%" />
+                <CardSection title="✨ PHEN WRITES ABOUT TNS" description="Write (3) distinct articles about The Nouns Square and Nounish culture." image="https://zuzalu.city/49.png" address="guiriba.eth" endedTime="12 days ago" current="55%" atLeast="85%" />
+            </section>
         </div>
     );
 }
 
-const cardSection = () => {
+interface CardSectionProps {
+    title: string;
+    description: string;
+    image: string;
+    address: string;
+    endedTime: string;
+    current: string;
+    atLeast: string;
+}
+
+const CardSection = ({ title, description, image, address, endedTime, current, atLeast }: CardSectionProps) => {
 
     return (
-        <div className="flex flex-col p-2 space-y-4 border border-solid rounded-lg" >
-            <div className="flex justify-between items-center">
-                <span className="text-2xl font-bold">Hack Week Content Creation Challenge</span>
-                <div className="bg-gray-100 rounded-md">
-                    <span className="py-1 px-2">Eeded</span>
-                </div>
-            </div>
-            <div className="text-box">
-                As part of Nouns Hack Week, The Noun Square is hosting a 1-week Content Creation Challenge. We
-                are seeking any kind of engaging Nounish content ideas: Short animations, YouTube or TikTok videos,
-                Thoughtful Twitter threads, interesting Medium articles, etc... Any kind of Nounish content can be
-                submitted for consideration. TNS Core Team and Nouncillors will vote together for the winners. Happy Hacking!
-            </div>
-            <div className="flex justify-between items-center">
-                <div className="flex flex-col justify-start">
-                    <span>Funding</span>
-                    <div className="flex items-center space-x-2">
-                        <span>0.40 ETH</span>
-                        <span>x</span>
-                        <span>5</span>
+        <>
+            <div className="md:flex flex-col p-2 bg-white border border-solid border-green-300 rounded-lg text-base md:text-lg hidden">
+                <div className="flex justify-between">
+                    <div className="flex flex-col space-y-4">
+                        <div>
+                            <span className="text-base md:text-2xl text-green-300">{title}</span>
+                        </div>
+                        <div className="text-box">
+                            {description}
+                        </div>
+                    </div>
+                    <div className="w-[7.5rem] h-[7.5rem] rounded-md">
+                        <img crossOrigin="anonymous" className="w-full h-full object-contain" src={image} alt="" />
                     </div>
                 </div>
-                <div className="flex flex-col justify-start">
-                    <span>Round ended</span>
-                    <span>4 days ago</span>
-                </div>
-                <div className="flex flex-col justify-start">
-                    <span>Proposals</span>
-                    <span>39</span>
+
+                <span className="bg-[#f5f5f5] w-full h-[.0625rem] opacity-50 my-2"></span>
+
+                <div className="flex justify-between items-center py-4">
+                    <div className="flex justify-start items-center space-x-2">
+                        <div className="border border-solid border-gray-300 rounded-full w-5 h-5">
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0" y="0" height="20" width="20"><rect x="0" y="0" rx="0" ry="0" height="20" width="20" transform="translate(0.08174120677913385 -2.6252029314959056) rotate(284.2 10 10)" fill="#c71423"></rect><rect x="0" y="0" rx="0" ry="0" height="20" width="20" transform="translate(7.664690804035856 9.651401246919585) rotate(179.5 10 10)" fill="#f77801"></rect><rect x="0" y="0" rx="0" ry="0" height="20" width="20" transform="translate(0.9116606157691695 -17.004470969742144) rotate(416.5 10 10)" fill="#01678c"></rect><rect x="0" y="0" rx="0" ry="0" height="20" width="20" transform="translate(-17.726298208504716 -15.136064785798045) rotate(297.2 10 10)" fill="#1566f2"></rect></svg>
+                        </div>
+                        <span>{address}</span>
+                        <span>·</span>
+                        <span>{endedTime}</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                        {/* <div className="w-5 h-5 flex justify-center items-center">
+                        <svg className="w-5 h-5" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0V0z"></path><path d="M18 13h-.68l-2 2h1.91L19 17H5l1.78-2h2.05l-2-2H6l-3 3v4c0 1.1.89 2 1.99 2H19a2 2 0 002-2v-4l-3-3zm-1-5.05l-4.95 4.95-3.54-3.54 4.95-4.95L17 7.95zm-4.24-5.66L6.39 8.66a.996.996 0 000 1.41l4.95 4.95c.39.39 1.02.39 1.41 0l6.36-6.36a.996.996 0 000-1.41L14.16 2.3a.975.975 0 00-1.4-.01z"></path></svg>
+                    </div> */}
+                        {/* <span>{proposals}</span> */}
+                        <span className="text-green-300">PROGRESS</span>
+
+                        <div className="flex-1 min-w-[15rem] max-w-[50rem] process-box w-ff relative">
+                            <div></div>
+                            <div className={`process-0 w-[25%]`}></div>
+                            <div className={`process-1 w-[55%]`}></div>
+                            <div className="mt-4 text-baseColor">6.88% of the Total Support(at least 5.70% needed)</div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+
+            <div className="md:hidden flex flex-col space-y-4 p-2 bg-white border border-solid border-green-300 rounded-lg text-base md:text-lg ">
+                <div>
+                    <span className="text-base md:text-2xl font-bold text-green-300">{title}</span>
+                </div>
+                <div className="text-box">
+                    {description}
+                </div>
+                <div className="w-full h-[7.5rem] rounded-md">
+                    <img crossOrigin="anonymous" className="w-full h-full object-contain" src={image} alt="" />
+                </div>
+                <div className="flex justify-start items-center space-x-2">
+                    <div className="border border-solid border-gray-300 rounded-full w-5 h-5">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0" y="0" height="20" width="20"><rect x="0" y="0" rx="0" ry="0" height="20" width="20" transform="translate(0.08174120677913385 -2.6252029314959056) rotate(284.2 10 10)" fill="#c71423"></rect><rect x="0" y="0" rx="0" ry="0" height="20" width="20" transform="translate(7.664690804035856 9.651401246919585) rotate(179.5 10 10)" fill="#f77801"></rect><rect x="0" y="0" rx="0" ry="0" height="20" width="20" transform="translate(0.9116606157691695 -17.004470969742144) rotate(416.5 10 10)" fill="#01678c"></rect><rect x="0" y="0" rx="0" ry="0" height="20" width="20" transform="translate(-17.726298208504716 -15.136064785798045) rotate(297.2 10 10)" fill="#1566f2"></rect></svg>
+                    </div>
+                    <span>{address}</span>
+                    <span>·</span>
+                    <span>{endedTime}</span>
+                </div>
+                <span className="text-green-300 text-sm">PROGRESS</span>
+                <div className="flex items-center space-x-2">
+                    <div className="flex-1 min-w-[15rem] max-w-[50rem] process-box w-ff relative">
+                        <div></div>
+                        <div className={`process-0 w-[25%]`}></div>
+                        <div className={`process-1 w-[55%]`}></div>
+                    </div>
+                </div>
+                <div className="text-sm">6.88% of the Total Support(at least 5.70% needed)</div>
+            </div>
+        </>
+
+
     )
 }

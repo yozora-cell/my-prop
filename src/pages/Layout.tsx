@@ -4,6 +4,7 @@ import { BrowserRouter } from 'react-router-dom'
 import { ethers } from "ethers";
 import { lazy, Suspense, useRef } from "react";
 import Header from "../components/Header";
+import { discord, notion } from "../asserts";
 import { notification } from "../components/Notiofication";
 
 const Home = lazy(() => import('../pages/Home'));
@@ -41,6 +42,18 @@ export default function Layout() {
                             <Route exact path="/tokens" render={(props) => <Tokens {...props} provider={provider} />} />
                         </Suspense>
                     </Switch>
+                    {/* <footer>
+                        <section className="sticky inset-x-0 bottom-8">
+                            <div className="flex justify-center items-center p-2 text-2xl font-bold space-x-4">
+                                <img onClick={() => {
+                                    window.open('https://discord.gg/9bt7uqGuJS', '_blank')
+                                }} src={discord} alt="" className="w-8 h-8 object-contain cursor-pointer" />
+                                <img onClick={() => {
+                                    window.open('https://www.notion.so/socialmoney/Loopss-15a3634708754d729b345f386d80dc9d', '_blank')
+                                }} src={notion} alt="" className="w-8 h-8 object-contain cursor-pointer" />
+                            </div>
+                        </section>
+                    </footer> */}
                 </div>
             </BrowserRouter>
         </>
