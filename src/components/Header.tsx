@@ -2,6 +2,7 @@ import { LanguageIcon, Bars3Icon } from '@heroicons/react/24/outline';
 import { ethers } from 'ethers';
 import { useImperativeHandle, useRef, useState } from 'react';
 import WalletButton from './WalletButton';
+import WalletButton2 from './WalletButton_bak';
 import InfoModal from './InfoModal';
 
 
@@ -64,6 +65,7 @@ export default function Header(props: IAppProps) {
                                 Create a round
                             </button>
                             <WalletButton onRef={wallet} clearData={clearData} provider={props.provider} />
+                            <WalletButton2 onRef={wallet} clearData={clearData} provider={props.provider} />
                         </section>
 
                     )
@@ -86,6 +88,7 @@ export default function Header(props: IAppProps) {
                         Create a round
                     </button>
                     <WalletButton onRef={wallet} clearData={clearData} provider={props.provider} />
+                    <WalletButton2 onRef={wallet} clearData={clearData} provider={props.provider} />
                 </div>
             </section>
 
