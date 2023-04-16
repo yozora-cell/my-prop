@@ -1,0 +1,23 @@
+{
+    "name": "my-app",
+    "version": "1.0.0",
+    "description": "My Electron App",
+    "author": "smiley",
+    "build": {
+      "productName": "My App",
+      "appId": "com.example.myapp",
+      "directories": {
+        "output": "build"
+      },
+      "win": {
+        "target": "nsis",
+        "icon": "build/icon.ico"
+      },
+      "nsis": {
+        "oneClick": true,
+        "perMachine": true,
+        "allowElevation": true,
+        "allowToChangeInstallationDirectory": true
+      }
+    }
+}

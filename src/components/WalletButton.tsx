@@ -37,7 +37,11 @@ export function usePassportPopupSetup() {
     const paramsEncodingPendingPCD = params.get("encodedPendingPCD");
 
     // First, this page is window.open()-ed. Redirect to the Passport app.
+    console.log("paramsProofUrl", paramsProofUrl)
+    console.log("paramsProof", paramsProof)
+    console.log("paramsEncodingPendingPCD", paramsEncodingPendingPCD)
     if (paramsProofUrl != null) {
+      console.log("paramsProofUrl", paramsProofUrl)
       window.location.href = decodeURIComponent(paramsProofUrl);
     } else if (paramsProof != null) {
       // Later, the Passport redirects back with a proof. Send it to our parent.
@@ -194,7 +198,9 @@ const WalletButton: React.FunctionComponent<IAppProps> = (props) => {
     props.clearData();
   };
 
-  const [messageToSign, setMessageToSign] = useState<string>("17171717");
+  const [messageToSign, setMessageToSign] = useState<string>(
+    `I want to authenticate with zupass.org.`
+    );
   const [serverProving, setServerProving] = useState(false);
 
   const result = usePassportPopupSetup();
