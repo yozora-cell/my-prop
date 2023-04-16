@@ -3,7 +3,7 @@ import { useCall, useContractFunction, useEthers, useTokenBalance } from "@useda
 import copy from "copy-to-clipboard";
 import { ethers, utils } from "ethers";
 import { useEffect, useRef } from "react";
-import { card, spring } from "../asserts";
+import { card, spring } from "../assets";
 import Ens from "../components/Ens";
 import { notification } from "../components/Notiofication";
 import Textarea from "../components/Textarea";

@@ -12,7 +12,7 @@ import { useEffect, useState } from "react";
 import EventDetail from "../components/EventDetail";
 import { getEventDetail, getEventList } from "../config/api";
 import dayjs from "dayjs";
-import { card, spring, tokenIcon } from "../asserts";
+import { card, spring, tokenIcon } from "../assets";
 
 interface IAppProps {
     provider: ethers.providers.Web3Provider
@@ -147,7 +147,7 @@ export default function Events(props: IAppProps) {
     return (
         <div>
             <section className="w-full flex flex-col space-y-4 justify-start relative rounded-lg mt-4">
-                <div>
+                {/* <div>
                     <span className="group block flex-shrink-0">
                         <div className="flex items-center">
                             <div>
@@ -166,42 +166,42 @@ export default function Events(props: IAppProps) {
                 </div>
                 <div className="text-pink-500">
                     <span>Mar 28, 2023 - Apr 4, 2023</span>
-                </div>
-                <p className="text-2xl font-bold">Hack Week Content Creation Challenge</p>
-                <p className="break-words">As part of Nouns Hack Week, The Noun Square is hosting a 1-week Content Creation Challenge. We are seeking any kind of engaging Nounish content ideas: Short animations, YouTube or TikTok videos, Thoughtful Twitter threads, interesting Medium articles, etc... Any kind of Nounish content can be submitted for consideration. TNS Core Team and Nouncillors will vote together for the winners. Happy Hacking!</p>
+                </div> */}
+                <p className="text-2xl font-bold">Establish a Zuzalu IRL community</p>
+                <p className="break-words">Zuzalu supports the facilitation of more diverse global Zuzalu communities on a local level. We are seeking local hosts/teams to establish stable offline physical spaces for communities of 20-50 residents. Proposal applications for funding up to $200,000 are welcome.</p>
             </section>
 
             <section className="w-full flex flex-1 justify-start md:justify-end items-center mt-4 space-x-4 md:space-x-10 text-xs md:text-lg">
                 <div className="flex flex-col justify-start">
-                    <span className="text-purple-500">Round ended</span>
-                    <span>4 days ago</span>
+                    <span className="text-purple-500">Remaining Funding</span>
+                    <span>950,000 USD</span>
                 </div>
                 <div className="flex flex-col justify-start">
                     <span>Funding</span>
                     <div className="flex items-center md:space-x-2">
-                        <span>0.40 ETH</span>
-                        <span>x</span>
-                        <span>5</span>
+                        <span>1,000,000 USD</span>
+                        {/* <span>x</span>
+                        <span>5</span> */}
                     </div>
                 </div>
-                <div className="flex flex-col justify-start">
+                {/* <div className="flex flex-col justify-start">
                     <span>Snapshot</span>
                     <span>16900257</span>
-                </div>
+                </div> */}
                 <div className="flex flex-col justify-start">
                     <span>Proposals</span>
-                    <span>39</span>
+                    <span>6</span>
                 </div>
             </section>
 
             <section className="w-full  justify-center mt-4 hidden md:flex">
                 <div className="w-[75%] flex flex-col p-4 space-y-4">
-                    <CardSection title="✨ Hack Week: The Noun Square Animated shorts!" description="For hack week I've created some animated shorts for The Nouns Square!" image="https://zuzalu.city/49.png" address="alsara2k.eth" endedTime="16 days ago" current="15%" atLeast="25%" />
-                    <CardSection title="✨ 💰 5 Ways Nounish subDAOs Can Make Money" description="5 revenue generation projects for the nounish subDAOs, helping everyone to have sustainable DAOs." image="https://zuzalu.city/49.png" address="guiriba.eth" endedTime="12 days ago" current="25%" atLeast="50%" />
-                    <CardSection title="✨ Nouns Buddies : Proliferate Nouns Through Fun and Silly Content" description="Create a reels with relatable content while proliferating nouns" image="https://zuzalu.city/49.png" address="guiriba.eth" endedTime="12 days ago" current="20%" atLeast="25%" />
-                    <CardSection title="✨ Noggles Adventure Onboarding Minigames" description="An interactive Nounish minigame launched with Infinitykeys.io explaining Nouns,cco,the Noggles, and the overall Nouns m" image="https://zuzalu.city/49.png" address="guiriba.eth" endedTime="13 days ago" current="45%" atLeast="55%" />
-                    <CardSection title="✨ tns x fomo x index card x hack week last minute sprint" description="An ode to fomo, tns, and the index card in the subway." image="https://zuzalu.city/49.png" address="guiriba.eth" endedTime="13 days ago" current="50%" atLeast="60%" />
-                    <CardSection title="✨ PHEN WRITES ABOUT TNS" description="Write (3) distinct articles about The Nouns Square and Nounish culture." image="https://zuzalu.city/49.png" address="guiriba.eth" endedTime="12 days ago" current="55%" atLeast="85%" />
+                    <CardSection title="✨ Community Living for Artists in Tuscany, Italy" description="Community living for artists in Tuscany with art exhibitions, studios, and cultural exchange." image="https://zuzalu.city/49.png" address="17.eth " endedTime="1 days ago" current="15%" atLeast="25%" />
+                    <CardSection title="✨ Mountain Top Community Living in the Andes of Peru" description="Peru: Mountain top community living in the Andes with outdoor activities and ecotourism." image="https://zuzalu.city/49.png" address="17.eth" endedTime="1 days ago" current="25%" atLeast="50%" />
+                    <CardSection title="✨ Co-living Space for Digital Nomads in Bali, Indonesia" description="Co-living space for digital nomads in Bali with high-speed wireless network and innovation." image="https://zuzalu.city/49.png" address="17.eth" endedTime="1 days ago" current="20%" atLeast="25%" />
+                    <CardSection title="✨ Eco-Village in Dali, Yunnan Province, China" description="Establish an eco-village in Dali, China with off-grid living, sustainable agriculture, and educational programs focused on environmental protection and sustainability." image="https://zuzalu.city/49.png" address="17.eth" endedTime="13 days ago" current="45%" atLeast="55%" />
+                    <CardSection title="✨ Community Living in Ghana" description="Establish a communal living space in Ghana with shared economy, self-sufficiency, and educational programs focused on intentional living and community building." image="https://zuzalu.city/49.png" address="17.eth" endedTime="1 days ago" current="50%" atLeast="60%" />
+                    <CardSection title="✨ Flux Democracy Community in Georgia" description="A unique community with communal living, shared economy, and Flux Democracy governance model, promoting democratic participation and community building." image="https://zuzalu.city/49.png" address="17.eth" endedTime="1 days ago" current="55%" atLeast="85%" />
                 </div>
                 <div className="w-[25%] p-4">
                     <div className="p-4 rounded-lg border border-solid border-gray-300">
@@ -221,7 +221,7 @@ export default function Events(props: IAppProps) {
                 </div>
             </section>
 
-            <section className="w-full justify-center mt-4 flex flex-col md:hidden space-y-4">
+            <section className="w-full justify-center py-4 flex flex-col md:hidden space-y-4">
                 <div className="p-4 rounded-lg border border-solid border-gray-300">
                     <div className="flex space-x-4">
                         <div className="rounded-full border border-solid border-gray-300 w-11 h-11 flex justify-center items-center">
@@ -236,12 +236,12 @@ export default function Events(props: IAppProps) {
                         <span className="text-baseColor">Winners are highlighted in green.</span>
                     </div>
                 </div>
-                <CardSection title="✨ Hack Week: The Noun Square Animated shorts!" description="For hack week I've created some animated shorts for The Nouns Square!" image="https://zuzalu.city/49.png" address="alsara2k.eth" endedTime="16 days ago" current="15%" atLeast="25%" />
-                <CardSection title="✨ 💰 5 Ways Nounish subDAOs Can Make Money" description="5 revenue generation projects for the nounish subDAOs, helping everyone to have sustainable DAOs." image="https://zuzalu.city/49.png" address="guiriba.eth" endedTime="12 days ago" current="25%" atLeast="50%" />
-                <CardSection title="✨ Nouns Buddies : Proliferate Nouns Through Fun and Silly Content" description="Create a reels with relatable content while proliferating nouns" image="https://zuzalu.city/49.png" address="guiriba.eth" endedTime="12 days ago" current="20%" atLeast="25%" />
-                <CardSection title="✨ Noggles Adventure Onboarding Minigames" description="An interactive Nounish minigame launched with Infinitykeys.io explaining Nouns,cco,the Noggles, and the overall Nouns m" image="https://zuzalu.city/49.png" address="guiriba.eth" endedTime="13 days ago" current="45%" atLeast="55%" />
-                <CardSection title="✨ tns x fomo x index card x hack week last minute sprint" description="An ode to fomo, tns, and the index card in the subway." image="https://zuzalu.city/49.png" address="guiriba.eth" endedTime="13 days ago" current="50%" atLeast="60%" />
-                <CardSection title="✨ PHEN WRITES ABOUT TNS" description="Write (3) distinct articles about The Nouns Square and Nounish culture." image="https://zuzalu.city/49.png" address="guiriba.eth" endedTime="12 days ago" current="55%" atLeast="85%" />
+                <CardSection title="✨ Community Living for Artists in Tuscany, Italy" description="Community living for artists in Tuscany with art exhibitions, studios, and cultural exchange." image="https://zuzalu.city/49.png" address="17.eth " endedTime="1 days ago" current="15%" atLeast="25%" />
+                <CardSection title="✨ Mountain Top Community Living in the Andes of Peru" description="Peru: Mountain top community living in the Andes with outdoor activities and ecotourism." image="https://zuzalu.city/49.png" address="17.eth" endedTime="1 days ago" current="25%" atLeast="50%" />
+                <CardSection title="✨ Co-living Space for Digital Nomads in Bali, Indonesia" description="Co-living space for digital nomads in Bali with high-speed wireless network and innovation." image="https://zuzalu.city/49.png" address="17.eth" endedTime="1 days ago" current="20%" atLeast="25%" />
+                <CardSection title="✨ Eco-Village in Dali, Yunnan Province, China" description="Establish an eco-village in Dali, China with off-grid living, sustainable agriculture, and educational programs focused on environmental protection and sustainability." image="https://zuzalu.city/49.png" address="17.eth" endedTime="13 days ago" current="45%" atLeast="55%" />
+                <CardSection title="✨ Community Living in Ghana" description="Establish a communal living space in Ghana with shared economy, self-sufficiency, and educational programs focused on intentional living and community building." image="https://zuzalu.city/49.png" address="17.eth" endedTime="1 days ago" current="50%" atLeast="60%" />
+                <CardSection title="✨ Flux Democracy Community in Georgia" description="A unique community with communal living, shared economy, and Flux Democracy governance model, promoting democratic participation and community building." image="https://zuzalu.city/49.png" address="17.eth" endedTime="1 days ago" current="55%" atLeast="85%" />
             </section>
         </div>
     );
@@ -295,10 +295,12 @@ const CardSection = ({ title, description, image, address, endedTime, current, a
                         <span className="text-green-300">PROGRESS</span>
 
                         <div className="flex-1 min-w-[15rem] max-w-[50rem] process-box w-ff relative">
-                            <div></div>
-                            <div className={`process-0 w-[25%]`}></div>
-                            <div className={`process-1 w-[55%]`}></div>
-                            <div className="mt-4 text-baseColor">6.88% of the Total Support(at least 5.70% needed)</div>
+                            <div className={`process-0 w-[14%]`}></div>
+                            <div className={`process-1 w-[26%]`}></div>
+                            <div className="mt-4">
+                                <span className="text-black">6.88% of the Total Support</span>
+                                <span className="text-baseColor">(at least 13% needed)</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -325,12 +327,14 @@ const CardSection = ({ title, description, image, address, endedTime, current, a
                 <span className="text-green-300 text-sm">PROGRESS</span>
                 <div className="flex items-center space-x-2">
                     <div className="flex-1 min-w-[15rem] max-w-[50rem] process-box w-ff relative">
-                        <div></div>
-                        <div className={`process-0 w-[25%]`}></div>
-                        <div className={`process-1 w-[55%]`}></div>
+                        <div className={`process-0 w-[14%]`}></div>
+                        <div className={`process-1 w-[26%]`}></div>
                     </div>
                 </div>
-                <div className="text-sm">6.88% of the Total Support(at least 5.70% needed)</div>
+                <div className="mt-4 text-sm">
+                    <span className="text-black">6.88% of the Total Support</span>
+                    <span className="text-baseColor">(at least 13% needed)</span>
+                </div>
             </div>
         </>
 

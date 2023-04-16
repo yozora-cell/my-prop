@@ -1,6 +1,6 @@
 import { notification } from "../components/Notiofication"
 import detectEthereumProvider from '@metamask/detect-provider'
-import { tokenIcon } from "../asserts";
+import { tokenIcon } from "../assets";
 
 
 /**
