@@ -1,8 +1,5 @@
 import { Fragment } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
-import { TransactionForm } from './TransactionForm';
-import { useContractFunction, useEthers, useTokenBalance } from '@usedapp/core';
-import { utils } from 'ethers';
 import { AtSymbolIcon, CodeBracketIcon, LinkIcon } from '@heroicons/react/24/outline';
 
 export interface IAppProps {
@@ -10,19 +7,8 @@ export interface IAppProps {
     changeInfoModal: () => void;
 }
 
-const contractAddress = '0xA243FEB70BaCF6cD77431269e68135cf470051b4'
-// const contract = new Contract(wethContractAddress, wethInterface)
-const contract = null;
 
 export default function InfoModal(props: IAppProps) {
-
-    const { account } = useEthers()
-    const tokenBalance = useTokenBalance(contractAddress, account)
-    const { state, send } = useContractFunction(contract, 'deposit', { transactionName: 'Wrap' })
-
-    const depositEther = (etherAmount: string) => {
-        void send({ value: utils.parseEther(etherAmount) })
-    }
 
 
     return (
@@ -41,7 +27,6 @@ export default function InfoModal(props: IAppProps) {
                         <Dialog.Overlay className="fixed inset-0 mask transition-opacity" />
                     </Transition.Child>
 
-                    {/* This element is to trick the browser into centering the modal contents. */}
                     <span className="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">
                         &#8203;
                     </span>

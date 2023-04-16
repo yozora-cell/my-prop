@@ -1,34 +1,17 @@
 import { LanguageIcon, Bars3Icon } from '@heroicons/react/24/outline';
-import { ethers } from 'ethers';
-import { useImperativeHandle, useRef, useState } from 'react';
+import { useState } from 'react';
 import WalletButton from './WalletButton';
-import WalletButton2 from './WalletButton_bak';
 import InfoModal from './InfoModal';
-import LOGO from "../assets/17_Create_a_logo.png";
+import LOGO from "../assets/logo.png";
 
 export interface IAppProps {
-    clearData: () => void;
-    onRef: any;
-    provider: ethers.providers.Web3Provider
 }
 
 export default function Header(props: IAppProps) {
 
-    const wallet = useRef<HTMLDivElement>(null);
-
-    const [active, setActive] = useState(0);
     const [show, setShow] = useState(false);
     const [showModal, setShowModal] = useState(false);
 
-    useImperativeHandle(props.onRef, () => {
-        return {
-            handleConnect: handleConnect,
-        }
-    })
-
-    const clearData = () => {
-        props.clearData();
-    }
 
     const handleMenu = () => {
         setShow(!show);
@@ -36,15 +19,6 @@ export default function Header(props: IAppProps) {
 
     const changeInfoModal = () => {
         setShowModal(!showModal);
-    }
-
-    const handleConnect = () => {
-        // @ts-ignore
-        wallet.current!.handleConnect();
-    }
-
-    const handlePage = (index: number) => {
-        setActive(index);
     }
 
     return (
@@ -67,7 +41,7 @@ export default function Header(props: IAppProps) {
                             <button onClick={changeInfoModal} className='w-full  bg-zuzalu order-0 border-2 flex justify-center items-center outline-none px-2 lg:px-6 py-2 font-poppins font-bold text-sm lg:text-lg rounded-xl leading-[24px] hover:bg-gray-50 transition-all'>
                                 Creat a Proposal
                             </button>
-                            <WalletButton onRef={wallet} clearData={clearData} provider={props.provider} />
+                            <WalletButton />
                             {/* <WalletButton2 onRef={wallet} clearData={clearData} provider={props.provider} /> */}
                         </section>
 
@@ -90,8 +64,7 @@ export default function Header(props: IAppProps) {
                     <button onClick={changeInfoModal} className='w-full min-w-[5.125rem] lg:min-w-button bg-zuzalu order-0 border-2 flex justify-center items-center outline-none py-2 font-poppins font-bold text-sm lg:text-lg rounded-xl leading-[24px] hover:bg-gray-50 transition-all'>
                         Creat a Proposal
                     </button>
-                    <WalletButton onRef={wallet} clearData={clearData} provider={props.provider} />
-                    {/* <WalletButton2 onRef={wallet} clearData={clearData} provider={props.provider} /> */}
+                    <WalletButton />
                 </div>
             </section>
 

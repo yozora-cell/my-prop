@@ -1,139 +1,23 @@
-import { useEthers, useTokenBalance } from "@usedapp/core";
-import { useEffect, useImperativeHandle, useState } from "react";
-import { DocumentDuplicateIcon, MagnifyingGlassIcon } from "@heroicons/react/24/outline";
-import { ethers } from "ethers";
-import copy from "copy-to-clipboard";
-import { notification } from "../components/Notiofication";
-import { CONTRACT_ADDRESS } from "../constants/config";
-import { getTrust } from "../config/api";
-import EnsOffline from "../components/EnsOffline";
-import Ens from "../components/Ens";
-import { handleAddToken } from "../utils/web3utils"
-import LOGO from "../assets/17_Create_a_logo.png";
+import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
+import LOGO from "../assets/logo.png";
 
 import { Link } from "react-router-dom";
-
-let initFlag = false;
+import { useState } from "react";
 
 interface IAppProps {
-    handleConnect: () => void;
-    onRef: any;
-    provider: ethers.providers.Web3Provider
-}
-
-interface ITrust {
-    fromAddress: string;
-    toAddress: string;
-    trustType: number;
-    value: number;
-    ens: string;
 }
 
 export default function Home(props: IAppProps) {
 
-    const { account } = useEthers();
-
     const [active, setActive] = useState(3);
-
-    const stakingBalance = useTokenBalance(CONTRACT_ADDRESS, account)
-
-    useImperativeHandle(props.onRef, () => {
-        return {
-            clearData: clearData,
-        }
-    })
 
     const handlePage = (index: number) => {
         setActive(index);
     }
 
-    /**
-     * @description:  connect wallet
-     * @return {*}
-     */
-    const handleConnect = () => {
-        props.handleConnect();
-    }
-
-    /**
-     * @description: change data type
-     * @param {number} type
-     * @return {*}
-     */
-    const handleHold = async (type: number) => {
-        // setTrustType(type);
-    }
-
-    /**
-     * @description: clear data
-     * @return {*}
-     */
-    const clearData = () => {
-        // setDataType(0);
-        // setHoldList([]);
-        // setHolderList([]);
-    }
-
-
-    /**
-     * @description: init trust data 
-     * @return {*}
-     */
-    // const initData = async () => {
-    //     if (account) {
-    //         getTrust(account, 0).then((res: ITrust[]) => {
-    //             setHolderList(res)
-    //         }).catch(err => {
-    //             console.log(err);
-    //         });
-    //         getTrust(account, 1).then((res: ITrust[]) => {
-    //             setHoldList(res)
-    //         }).catch(err => {
-    //             console.log(err);
-    //         });
-    //     }
-    // }
-
-
-    // useEffect(() => {
-    //     if (account) {
-    //         if (!initFlag) {
-    //             // initData();
-    //             initFlag = true;
-    //         }
-    //         if (trustType === 0) {
-    //             getTrust(account, 1).then(res => {
-    //                 setHoldList(res)
-    //                 if (res.length === 0) {
-    //                     setDataType(2)
-    //                 } else {
-    //                     setDataType(1)
-    //                 }
-    //             }).catch(err => {
-    //                 console.log(err);
-    //             });
-    //         }
-    //         if (trustType === 1) {
-    //             getTrust(account, 0).then(res => {
-    //                 setHolderList(res)
-    //                 if (res.length === 0) {
-    //                     setDataType(2)
-    //                 } else {
-    //                     setDataType(1)
-    //                 }
-    //             }).catch(err => {
-    //                 console.log(err);
-    //             });
-    //         }
-    //     } else {
-    //         setDataType(0)
-    //     }
-    // }, [account, trustType]);
-
     return (
         <div className="relative">
             <section className="w-full relative rounded-lg mt-4 flex space-x-4">
-                {/* <div className="w-60 h-60 max-h-[25vh] bg-card bg-no-repeat bg-contain relative rounded-lg hidden md:block"></div> */}
                 <img className="w-60 h-60 object-contain relative rounded-lg hidden md:block" src={LOGO} alt="profile" />
                 <div className="flex flex-col items-start justify-start">
                     <div className="flex flex-1 justify-start items-center space-x-2">
@@ -148,7 +32,6 @@ export default function Home(props: IAppProps) {
                     </div>
                     <span className="tracking-wide leading-6">
                         Zuzu is a community capital allocation model based on conviction voting, designed to be highly automated and trust-coordinated, providing a way to extend Zuzalu community capital to thousands of public goods.
-                        {/* <a className="text-pink-500" href="https://twitter.com/thenounsquare" target="_blank" rel="noreferrer"> here</a> */}
                     </span>
                 </div>
             </section>
@@ -218,9 +101,6 @@ export default function Home(props: IAppProps) {
                     </section>
                 ) :
                     (
-                        // <div className="w-full h-full min-h-[10rem] flex justify-center items-center text-3xl">
-                        //     No rounds available
-                        // </div>
                         <section className="w-full grid grid-cols-1 md:grid-cols-2 place-content-center gap-4 py-4">
 
                             <ProposalsCard
@@ -276,8 +156,6 @@ const ProposalsCard = ({ title, status, description, funding, roundEnded, propos
                         <span className="text-baseColor">Funding</span>
                         <div className="flex items-center space-x-2">
                             <span>{funding}</span>
-                            {/* <span>x</span>
-                            <span>5</span> */}
                         </div>
                     </div>
                     <div className="flex flex-col justify-start">
