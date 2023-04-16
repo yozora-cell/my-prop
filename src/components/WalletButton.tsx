@@ -200,7 +200,7 @@ const WalletButton: React.FunctionComponent<IAppProps> = (props) => {
 
   const [messageToSign, setMessageToSign] = useState<string>(
     `I want to authenticate with zupass.org.`
-    );
+  );
   const [serverProving, setServerProving] = useState(false);
 
   const result = usePassportPopupSetup();
