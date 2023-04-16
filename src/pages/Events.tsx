@@ -210,12 +210,19 @@ export default function Events(props: IAppProps) {
                                 <svg className="w-6 h-6" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0V0z"></path><path d="M18 13h-.68l-2 2h1.91L19 17H5l1.78-2h2.05l-2-2H6l-3 3v4c0 1.1.89 2 1.99 2H19a2 2 0 002-2v-4l-3-3zm-1-5.05l-4.95 4.95-3.54-3.54 4.95-4.95L17 7.95zm-4.24-5.66L6.39 8.66a.996.996 0 000 1.41l4.95 4.95c.39.39 1.02.39 1.41 0l6.36-6.36a.996.996 0 000-1.41L14.16 2.3a.975.975 0 00-1.4-.01z"></path></svg>
                             </div>
                             <div className="flex flex-col justify-start">
-                                <span>Voting ended</span>
-                                <span className="text-baseColor">21 votes cast for 39 props!</span>
+                                <span>Voting in process</span>
+                                <span className="text-baseColor">3100 Zuzu cast so far!</span>
                             </div>
                         </div>
-                        <div className="mt-2">
-                            <span className="text-baseColor">Winners are highlighted in green.</span>
+                        <div className="mt-2 flex flex-col space-y-2">
+                            <div className="flex justify-between items-center">
+                                <span className="text-baseColor">cast your zuzus</span>
+                                <span className="text-baseColor">100 left</span>
+                            </div>
+                            <div className="rounded-lg h-4 bg-purple-500 opacity-50"></div>
+                            <button className='w-full  bg-gray-300 order-0 border-2 flex justify-center items-center outline-none px-2 lg:px-6 py-2 font-poppins font-bold text-sm lg:text-lg rounded-xl leading-[24px] hover:bg-gray-50 transition-all'>
+                                Submit Votes
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -228,12 +235,19 @@ export default function Events(props: IAppProps) {
                             <svg className="w-6 h-6" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0V0z"></path><path d="M18 13h-.68l-2 2h1.91L19 17H5l1.78-2h2.05l-2-2H6l-3 3v4c0 1.1.89 2 1.99 2H19a2 2 0 002-2v-4l-3-3zm-1-5.05l-4.95 4.95-3.54-3.54 4.95-4.95L17 7.95zm-4.24-5.66L6.39 8.66a.996.996 0 000 1.41l4.95 4.95c.39.39 1.02.39 1.41 0l6.36-6.36a.996.996 0 000-1.41L14.16 2.3a.975.975 0 00-1.4-.01z"></path></svg>
                         </div>
                         <div className="flex flex-col justify-start">
-                            <span>Voting ended</span>
-                            <span className="text-baseColor">21 votes cast for 39 props!</span>
+                            <span>Voting in process</span>
+                            <span className="text-baseColor">3100 Zuzu cast so far!</span>
                         </div>
                     </div>
-                    <div className="mt-2">
-                        <span className="text-baseColor">Winners are highlighted in green.</span>
+                    <div className="mt-2 flex flex-col space-y-2">
+                        <div className="flex justify-between items-center">
+                            <span className="text-baseColor">cast your zuzus</span>
+                            <span className="text-baseColor">100 left</span>
+                        </div>
+                        <div className="rounded-lg h-4 bg-purple-500 opacity-50"></div>
+                        <button className='w-full  bg-gray-300 order-0 border-2 flex justify-center items-center outline-none px-2 lg:px-6 py-2 font-poppins font-bold text-sm lg:text-lg rounded-xl leading-[24px] hover:bg-gray-50 transition-all'>
+                            Submit Votes
+                        </button>
                     </div>
                 </div>
                 <CardSection title="✨ Community Living for Artists in Tuscany, Italy" description="Community living for artists in Tuscany with art exhibitions, studios, and cultural exchange." image="https://zuzalu.city/49.png" address="17.eth " endedTime="1 days ago" current="15%" atLeast="25%" />

@@ -90,7 +90,7 @@ export function openSemaphoreSignaturePopup(
  * and popupUrl, which is the route where the usePassportPopupSetup hook is being
  * served from.
  */
- export function openPassportPopup(popupUrl: string, proofUrl: string) {
+export function openPassportPopup(popupUrl: string, proofUrl: string) {
   const url = `${popupUrl}?proofUrl=${encodeURIComponent(proofUrl)}`;
   console.log("url", url)
   window.open(url, "_blank", "width=360,height=480,top=100,popup");

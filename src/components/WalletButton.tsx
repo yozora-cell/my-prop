@@ -211,13 +211,13 @@ const WalletButton: React.FunctionComponent<IAppProps> = (props) => {
 
       //解析json字符串
       const pcd = JSON.parse(pcdStr);
-    //   console.log("pcd", pcd);
+      //   console.log("pcd", pcd);
 
       const pcdData = JSON.parse(pcd.pcd);
-    //   console.log("claimString", pcdData.claim);
+      //   console.log("claimString", pcdData.claim);
       setClaim(pcdData.claim.signedMessage);
 
-    //   console.log("proofString", pcdData.proof);
+      //   console.log("proofString", pcdData.proof);
       setProof(pcdData.proof);
       setShowModal(
         !!pcdData.claim.signedMessage && !!pcd.proof && pcdData.proof.length > 0
@@ -231,13 +231,13 @@ const WalletButton: React.FunctionComponent<IAppProps> = (props) => {
     setShowModal(false);
   };
 
-  useEffect(()=>{
-    if(claim && proof  && proof.length > 0){
-        console.log("claim",claim);
-        console.log("proof",proof);
-        setShowModal(true);
+  useEffect(() => {
+    if (claim && proof && proof.length > 0) {
+      console.log("claim", claim);
+      console.log("proof", proof);
+      setShowModal(true);
     }
-  },[claim,proof])
+  }, [claim, proof])
   return (
     <>
       <button
