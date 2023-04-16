@@ -68,7 +68,7 @@ export default function Header(props: IAppProps) {
                                 Creat a Proposal
                             </button>
                             <WalletButton onRef={wallet} clearData={clearData} provider={props.provider} />
-                            <WalletButton2 onRef={wallet} clearData={clearData} provider={props.provider} />
+                            {/* <WalletButton2 onRef={wallet} clearData={clearData} provider={props.provider} /> */}
                         </section>
 
                     )
@@ -91,7 +91,7 @@ export default function Header(props: IAppProps) {
                         Creat a Proposal
                     </button>
                     <WalletButton onRef={wallet} clearData={clearData} provider={props.provider} />
-                    <WalletButton2 onRef={wallet} clearData={clearData} provider={props.provider} />
+                    {/* <WalletButton2 onRef={wallet} clearData={clearData} provider={props.provider} /> */}
                 </div>
             </section>
 
